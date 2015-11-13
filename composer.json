@@ -1,0 +1,16 @@
+{
+    "name": "eab/tutei-sitemap-bundle",
+    "description": "eZ Publish 5 Bundle to generate an XML sitemap on the fly",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Thiago Campos Viana",
+            "homepage": "https://github.com/thiagocamposviana"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Tutei\\SitmapBundle\\": ""
+        }
+    }
+}
