@@ -17,6 +17,8 @@ Edit `ezpublish/EzPublishKernel.php` and add the following to the registerBundle
 
     new Tutei\SitemapBundle\TuteiSitemapBundle()
 
+*Important:* make sure your main bundle comes below it.
+
 Add the following to `ezpublish/config/routing.yml`:
 
     tutei_sitemap:
@@ -28,8 +30,15 @@ Run the following to install the bundle assets:
 
 # How to configure
 
-Example parameters are in `/src/Tutei/SitemapBundle/Resources/config/services.yml`
-Copy and modify these to your own `services.yml`
+Add something like the following to your own `services.yml`:
+
+	parameters:
+	    tutei_sitemap.classes:
+	        - folder
+	        - article
+
+	    tutei_sitemap.base_url:
+	        http://example.com
 
 # How to use
 
