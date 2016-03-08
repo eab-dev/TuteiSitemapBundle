@@ -36,13 +36,11 @@ class DefaultController extends Controller {
         $list = $searchService->findContent($query);
 
         $results = array();
-
         foreach ($list->searchHits as $content) {
-
             $locationId = ($content->valueObject->versionInfo->contentInfo->mainLocationId);
-
-
-            $results[] = $locationService->loadLocation($locationId);
+            if ( is_int( $locationId )) {
+                $results[] = $locationService->loadLocation( $locationId );
+            }
         }
 
         return $this->render('TuteiSitemapBundle:Default:index.xml.twig', 
