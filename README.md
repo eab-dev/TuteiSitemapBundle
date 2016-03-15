@@ -3,7 +3,7 @@
 A simple eZ Publish 5 bundle providing a controller to generate an XML sitemap on the fly.
 It provides a human-readable stylesheet.
 
-# How to install
+## How to install
 
 Install into vendors using composer:
 
@@ -28,7 +28,9 @@ Run the following to install the bundle assets:
 
     php ezpublish/console assets:install --symlink web
 
-# How to configure
+## How to configure
+
+### Minimal configuration
 
 Add something like the following to your own `services.yml`:
 
@@ -40,6 +42,6 @@ Add something like the following to your own `services.yml`:
 	    tutei_sitemap.base_url:
 	        http://example.com
 
-# How to use
+## How to use
 
 To view your sitemap access: `/sitemap.xml`
