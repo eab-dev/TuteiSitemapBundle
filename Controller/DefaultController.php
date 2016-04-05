@@ -5,6 +5,7 @@ namespace Tutei\SitemapBundle\Controller;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\ContentTypeIdentifier;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\LogicalAnd;
+use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Visibility;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\LocationPathString;
 use eZ\Publish\Core\MVC\Symfony\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,7 +28,8 @@ class DefaultController extends Controller {
 
         $query->criterion = new LogicalAnd(
                 array(
-            new ContentTypeIdentifier($classes)
+                        new ContentTypeIdentifier( $classes ),
+                        new Visibility( Visibility::VISIBLE )
                 )
         );
         $query->sortClauses = array(
